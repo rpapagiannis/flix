@@ -14,8 +14,6 @@ class MoviesController < ApplicationController
   def update
     @movie = Movie.find(params[:id])
 
-
-
     @movie.update(movie_params)
 
     redirect_to @movie
@@ -29,6 +27,14 @@ class MoviesController < ApplicationController
     @movie = Movie.new(movie_params)
     @movie.save
     redirect_to @movie
+  end
+
+  def destroy
+    @movie = Movie.find(params[:id])
+
+    @movie.destroy
+
+    redirect_to movies_url, status: :see_other
   end
 
   private
