@@ -9,4 +9,7 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: { case_sensitive: true }
   validates :email, format: { with: /\A\S+@\S+\.\S+\z/ }, uniqueness: { case_sensitive: false }
   validates :password, length: { minimum: 7, allow_blank: true }
+
+  scope :by_name, -> { order(:name) }
+  scope :not_admins, -> { by_name.where(admin: false) }
 end
