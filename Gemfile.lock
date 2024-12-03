@@ -176,6 +176,7 @@ GEM
     parser (3.3.6.0)
       ast (~> 2.4.1)
       racc
+    pg (1.5.9)
     popper_js (2.11.8)
     psych (5.2.0)
       stringio
@@ -341,6 +342,7 @@ DEPENDENCIES
   debug
   importmap-rails
   jbuilder
+  pg
   puma (>= 5.0)
   rails (~> 8.0.0)
   rubocop-rails-omakase
