@@ -65,5 +65,3 @@ end
 gem "bootstrap", "~> 5.3"
 
 gem "sassc-rails", "~> 2.1"
-
-ruby "3.3.0" # or another 3.2.x version
