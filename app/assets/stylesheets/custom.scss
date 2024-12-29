@@ -22,6 +22,7 @@ $error-color: $red;
 $error-background-color: $light-yellow;
 $sold-out-color: $yellow;
 $box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.09);
+$footer-height: 7rem; // 2rem padding-top + 2rem padding-bottom + extra space
 
 // Bootstrap Variable Overrides
 
@@ -38,8 +39,16 @@ $input-bg: white;
 
 // Custom CSS
 
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .content {
   @extend .container;
+  flex: 1 0 auto; // This makes the content area expand
+  padding-bottom: $footer-height; // Prevent content from being hidden behind footer
 }
 
 a {
@@ -379,9 +388,10 @@ footer {
   background: $black;
   color: $light-gray;
   text-align: center;
-  margin-top: 3rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  flex-shrink: 0; // Prevents footer from shrinking
+  margin-top: auto; // Pushes footer to bottom when content is short
 }
 
 // Admin Section
