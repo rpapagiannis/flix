@@ -23,7 +23,7 @@ class Movie < ApplicationRecord
   scope :hits, -> { released.where(total_gross: 225_000_000...).order(total_gross: :desc) }
 
   def flop?
-    (total_gross.blank? || total_gross < 225_000_000) && (reviews.count < 50 || reviews.average(:stars) < 4)
+    (total_gross < 225_000_000 && released_on < 1.year.ago) && (reviews.count < 50 || reviews.average(:stars) < 4)
   end
 
   def average_stars
